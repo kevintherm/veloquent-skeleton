@@ -11,8 +11,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                'core/resources/css/app.css',
-                'core/resources/js/app.js',
+                'vendor/veloquent/core/resources/css/app.css',
+                'vendor/veloquent/core/resources/js/app.js',
             ],
             refresh: true,
             fonts: [
@@ -26,14 +26,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, '../core/resources/js'),
-        },
-    },
-    server: {
-        fs: {
-            allow: [
-                path.resolve(__dirname, '..'),
-            ],
+            '@': path.resolve(__dirname, 'vendor/veloquent/core/resources/js'),
         },
     },
 });
