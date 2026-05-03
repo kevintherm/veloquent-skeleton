@@ -22,7 +22,8 @@
         "laravel/pint": "^1.27",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^12.5.12"
+        "phpunit/phpunit": "^12.5.12",
+        "veloquent/core": "@dev"
     },
     "autoload": {
         "psr-4": {
@@ -36,6 +37,12 @@
             "Tests\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../core"
+        }
+    ],
     "scripts": {
         "setup": [
             "composer install",
