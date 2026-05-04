@@ -70,16 +70,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php artisan velo:install --force --ansi",
-            "@php -r \"echo ' ';\"",
-            "@php -r \"echo 'Veloquent has been successfully installed!';\"",
-            "@php -r \"echo ' ';\"",
-            "@php -r \"echo 'To get started, run:';\"",
-            "@php -r \"echo '  cd ' . basename(getcwd());\"",
-            "@php -r \"echo '  php artisan serve';\"",
-            "@php -r \"echo ' ';\"",
-            "@php -r \"echo 'The app will be available at: http://localhost:8000';\"",
-            "@php -r \"echo ' ';\""
+            "@php artisan velo:install --force --ansi"
         ],
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
