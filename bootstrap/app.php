@@ -21,6 +21,20 @@ return Application::configure(basePath: dirname(__DIR__))
             ShareErrorsFromSession::class,
             VerifyCsrfToken::class,
         ]);
+
+        $middleware->alias([
+            'demo.block' => function ($request, $next) {
+                if (env('VELO_IS_DEMO') && $request->is('*/settings') && $request->isMethod('PATCH')) {
+                    if ($request->hasAny(['storage', 'email'])) {
+                        abort(403, 'Configuration changes are restricted in demo mode.');
+                    }
+                }
+
+                return $next($request);
+            },
+        ]);
+
+        $middleware->append('demo.block');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
