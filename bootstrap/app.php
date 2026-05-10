@@ -1,6 +1,5 @@
 <?php
 
-use Throwable;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Application;
 use Illuminate\Session\Middleware\StartSession;
